@@ -26,15 +26,15 @@ const s = StyleSheet.create({
     resizeMode: "contain",
   },
   baseText: {
-    color: "rgba(255, 255, 255, 0.8)",
+    color: "#0055AF",
     backgroundColor: "transparent",
   },
   placeholder: {
-    color: "rgba(255, 255, 255, 0.5)",
+    color: "#0055AF",
   },
   focused: {
     fontWeight: "bold",
-    color: "rgba(255, 255, 255, 1)",
+    color: "#0055AF",
   },
   number: {
     fontSize: 21,
@@ -70,7 +70,7 @@ const s = StyleSheet.create({
   cvc: {
     fontSize: 16,
     position: "absolute",
-    top: 80,
+    top: 65,
     right: 30,
   },
 });
@@ -136,7 +136,9 @@ export default class CardView extends Component {
           <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
             source={imageFront}>
               <Image style={[s.icon]}
-                source={Icons[brand]} />
+                source={require('./icons/union_pay.png')} />
+              {/* <Image style={[s.icon]}
+                source={Icons[brand]} /> */}
               <Text style={[s.baseText, { fontFamily }, s.number, !number && s.placeholder, focused === "number" && s.focused]}>
                 { !number ? placeholder.number : number }
               </Text>
